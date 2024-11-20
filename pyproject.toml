@@ -1,0 +1,26 @@
+target-version = "py311"
+
+[tool.ruff]
+line-length = 79
+lint.select = ["ALL"]
+lint.ignore = [
+    "ANN",      # Type hints related, let mypy handle these
+    "EM101",    # Exception must not use a string literal, assign to variable first
+    "EM102",    # Exception must not use an f-string literal, assign to variable first
+    "PTH",      # User Pathlib stuff over os.*. Should migrate to Pathlib at some point
+    "SIM108",   # Use ternary operator ... Ternary is harmful for readability in some cases
+    "TRY003",   # Avoid specifying long messages outside the exception class
+    "D104",     # Missing docstring in public package
+    "D100",     # Missing docstring in public module
+    "D101",     # Missing docstring in public class
+    "D102",     # Missing docstring in public method
+    "D103",     # Missing docstring in public function
+    "D107",     # Missing docstring in `__init__`
+    "A003",     # Class attribute `id` is shadowing a python builtin
+    "D203",     # one-blank-line-before-class
+    "D213",     # multi-line-summary-second-line
+    "S101",     # Use of `assert` detected
+    "BLE001",   # Allow to catch built-in Exception
+    "G004",     # Allow debug with log messages
+    "FA102",    # Allow typing hints in modern codebase
+]
